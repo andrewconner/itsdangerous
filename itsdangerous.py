@@ -104,8 +104,8 @@ class Signer(object):
 
     def get_signature(self, value):
         """Returns the signature for the given value"""
-        key = hashlib.sha1(self.salt + 'signer' + self.secret_key).digest()
-        mac = hmac.new(key, msg=value, digestmod=hashlib.sha1)
+        key = hashlib.sha256(self.salt + 'signer' + self.secret_key).digest()
+        mac = hmac.new(key, msg=value, digestmod=hashlib.sha256)
         return base64_encode(mac.digest())
 
     def sign(self, value):
@@ -233,7 +233,7 @@ class Serializer(object):
         return Signer(self.secret_key, self.salt)
 
     def dumps(self, obj):
-        """Returns URL-safe, sha1 signed base64 compressed JSON string.
+        """Returns URL-safe, sha256 signed base64 compressed JSON string.
 
         If compress is True (the default) checks if compressing using zlib can
         save some space. Prepends a '.' to signify compression. This is included
