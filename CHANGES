@@ -1,5 +1,9 @@
-It's Dangerous Changelog
+It's Dangerous (SHA256 fork) Changelog
 ------------------------
+
+Version 0.12-sha256
+~~~~~~~~~~~~
+- Changed hashing algorithm from SHA1 to SHA256.
 
 Version 0.12
 ~~~~~~~~~~~~

@@ -1,3 +1,7 @@
+This fork uses SHA256 instead of SHA1 for the hashing algorithm.
+
+======
+
 It's Dangerous
    ... so better sign this
 
