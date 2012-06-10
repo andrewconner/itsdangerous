@@ -96,11 +96,11 @@ class Signer(object):
     can utilize it.
     """
 
-    #: The digest method to use for the signer.  This defaults to sha1 but can
+    #: The digest method to use for the signer.  This defaults to sha256 but can
     #: be changed for any other function in the hashlib module.
     #:
     #: .. versionadded:: 0.13
-    digest_method = staticmethod(hashlib.sha1)
+    digest_method = staticmethod(hashlib.sha256)
 
     def __init__(self, secret_key, salt=None, sep='.'):
         self.secret_key = secret_key
